@@ -3,101 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Y CREATIVE — Apps made in Australia</title>
-<meta name="description" content="Y CREATIVE PTY LTD is an independent Australian app studio. Maker of QuitHaven — the gamified quit-vaping app.">
+<title>Y CREATIVE — Independent app studio, Australia</title>
+<meta name="description" content="Y CREATIVE PTY LTD is an independent Australian app studio. We design, build and publish focused mobile apps.">
 <style>
   :root {
-    --bg: #0A0C14; --card: #131828; --card-hi: #1B2236;
-    --text: #EDEFF7; --subtle: #8B93AC;
-    --violet: #8B7BFF; --cyan: #39D8E8; --gold: #FFC94D; --green: #4ADE80;
+    --bg: #FAFAF8; --ink: #16181D; --subtle: #6B7280;
+    --line: #E5E7EB; --accent: #4F46E5; --card: #FFFFFF;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: var(--bg); color: var(--text);
+    background: var(--bg); color: var(--ink);
     font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6; min-height: 100vh;
-    display: flex; flex-direction: column; align-items: center;
+    line-height: 1.65;
   }
-  main { max-width: 680px; padding: 64px 24px 32px; width: 100%; }
-  .brand {
-    font-size: 15px; font-weight: 800; letter-spacing: 6px;
-    color: var(--subtle); text-align: center;
+  main { max-width: 760px; margin: 0 auto; padding: 72px 24px 40px; }
+  .brand { font-size: 14px; font-weight: 800; letter-spacing: 6px; color: var(--subtle); }
+  h1 { font-size: clamp(30px, 6vw, 46px); font-weight: 850; letter-spacing: -0.5px; margin: 14px 0 10px; }
+  .tag { color: var(--subtle); font-size: 17px; max-width: 52ch; }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: 3px;
+    color: var(--subtle); text-transform: uppercase; margin: 56px 0 18px;
   }
-  h1 {
-    text-align: center; font-size: clamp(28px, 6vw, 42px);
-    font-weight: 900; letter-spacing: 1px; margin: 10px 0 8px;
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .svc {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 22px 20px; font-size: 14.5px; color: var(--subtle);
   }
-  .tag { text-align: center; color: var(--subtle); margin-bottom: 56px; }
-  .app-card {
-    background: linear-gradient(160deg, var(--card), var(--card-hi));
-    border: 1px solid rgba(139, 123, 255, 0.25);
-    border-radius: 28px; padding: 36px 32px;
-    display: flex; gap: 28px; align-items: center; flex-wrap: wrap;
-    box-shadow: 0 0 60px rgba(139, 123, 255, 0.08);
+  .svc b { display: block; color: var(--ink); font-size: 15.5px; margin-bottom: 6px; }
+  .app-row {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 22px; display: flex; gap: 20px; align-items: center;
+    text-decoration: none; color: inherit; transition: box-shadow .15s ease;
   }
-  .app-card img {
-    width: 128px; height: 128px; border-radius: 28px; flex-shrink: 0;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  .app-row:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+  .app-row img { width: 76px; height: 76px; border-radius: 18px; flex-shrink: 0; }
+  .app-row .t { font-weight: 800; font-size: 19px; }
+  .app-row .d { color: var(--subtle); font-size: 14.5px; }
+  .app-row .go { margin-left: auto; color: var(--accent); font-weight: 700; white-space: nowrap; }
+  .live {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1px;
+    color: #067647; background: #E7F6EC; border-radius: 999px;
+    padding: 2px 10px; margin-left: 8px; vertical-align: 2px;
   }
-  .app-card .info { flex: 1; min-width: 240px; }
-  .app-card h2 { font-size: 26px; font-weight: 900; letter-spacing: 0.5px; }
-  .app-card .sub { color: var(--cyan); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
-  .app-card p { color: var(--subtle); font-size: 15px; }
-  .badge {
-    display: inline-block; margin-top: 16px; padding: 10px 20px;
-    border-radius: 999px; border: 2px solid var(--gold);
-    color: var(--gold); font-weight: 800; font-size: 13px;
-    letter-spacing: 1px;
-  }
-  .feats {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px; margin-top: 40px;
-  }
-  .feat {
-    background: var(--card); border-radius: 18px; padding: 18px;
-    font-size: 13.5px; color: var(--subtle);
-  }
-  .feat b { color: var(--text); display: block; margin-bottom: 4px; font-size: 14.5px; }
   footer {
-    margin-top: auto; padding: 40px 24px 32px; text-align: center;
-    color: var(--subtle); font-size: 13px; width: 100%;
+    border-top: 1px solid var(--line); margin-top: 72px;
+    padding: 28px 24px 36px; text-align: center; color: var(--subtle); font-size: 13.5px;
   }
-  footer a { color: var(--cyan); text-decoration: none; }
+  footer a { color: var(--accent); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
-  .sep { margin: 0 10px; opacity: 0.4; }
+  .sep { margin: 0 10px; opacity: 0.5; }
 </style>
 </head>
 <body>
 <main>
   <div class="brand">Y CREATIVE</div>
-  <h1>Apps with a pulse.</h1>
-  <p class="tag">An independent app studio in Australia.</p>
+  <h1>We build focused mobile apps.</h1>
+  <p class="tag">Y CREATIVE is an independent app studio based in Australia.
+  We design, build and publish our own apps — small, polished and private
+  by default.</p>
 
-  <div class="app-card">
-    <img src="puffzero-icon.png" alt="QuitHaven app icon — a broken vape with a green sprout growing from it">
-    <div class="info">
-      <h2>QuitHaven</h2>
-      <div class="sub">Quit vaping. Level up your lungs.</div>
-      <p>The quit-vaping app that fights like a game: smash cravings with
-      an SOS arcade, watch your lungs heal in real time, and turn every
-      puff you didn't take into a floating world you build. No accounts.
-      Your data never leaves your phone.</p>
-      <span class="badge">COMING SOON TO GOOGLE PLAY</span>
+  <h2>What we do</h2>
+  <div class="services">
+    <div class="svc"><b>App development</b>Native-quality Android &amp; iOS apps built with Flutter, end to end.</div>
+    <div class="svc"><b>Product design</b>From idea to interface — focused products without the bloat.</div>
+    <div class="svc"><b>Publishing &amp; growth</b>Store launches, listings and updates, done properly.</div>
+  </div>
+
+  <h2>Our apps</h2>
+  <a class="app-row" href="/quithaven/">
+    <img src="/quithaven-icon.png" alt="QuitHaven app icon">
+    <div>
+      <div class="t">QuitHaven<span class="live">LIVE ON GOOGLE PLAY</span></div>
+      <div class="d">Quit vaping. Build your haven. The quit app that fights like a game.</div>
     </div>
-  </div>
-
-  <div class="feats">
-    <div class="feat"><b>🆘 Craving SOS</b>Breathing, mini-games and real talk for the moment it hits.</div>
-    <div class="feat"><b>🌍 Build your Haven</b>Every craving beaten grows your world.</div>
-    <div class="feat"><b>🔒 Private by design</b>No account, no cloud — everything stays on your device.</div>
-  </div>
+    <div class="go">View app →</div>
+  </a>
 </main>
 
 <footer>
   <p>
-    <a href="privacy.html">QuitHaven Privacy Policy</a>
-    <span class="sep">·</span>
     <a href="mailto:support@ycreative.com.au">support@ycreative.com.au</a>
+    <span class="sep">·</span>
+    <a href="/privacy.html">Privacy</a>
   </p>
   <p style="margin-top:8px">© 2026 Y CREATIVE PTY LTD · Australia</p>
 </footer>

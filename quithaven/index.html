@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuitHaven — Quit vaping. Build your haven.</title>
+<meta name="description" content="QuitHaven is the quit-vaping app that fights like a game: an SOS arcade for cravings, a 3D world that grows with your streak, and everything private on your phone. Free on Google Play.">
+<style>
+  :root {
+    --bg: #0A0C14; --card: #131828; --card-hi: #1B2236;
+    --text: #EDEFF7; --subtle: #8B93AC;
+    --violet: #8B7BFF; --cyan: #39D8E8; --gold: #FFC94D; --green: #4ADE80;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 24px 32px; }
+  .back { color: var(--subtle); text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 700; }
+  .back:hover { color: var(--text); }
+  .hero { text-align: center; margin: 40px 0 12px; }
+  .hero img.icon {
+    width: 116px; height: 116px; border-radius: 26px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.55);
+  }
+  h1 { font-size: clamp(30px, 6vw, 44px); font-weight: 900; letter-spacing: 0.5px; margin: 18px 0 6px; }
+  .tag { color: var(--cyan); font-weight: 700; }
+  .pitch { color: var(--subtle); max-width: 54ch; margin: 14px auto 0; }
+  .store { text-align: center; margin: 26px 0 8px; }
+  .store img { height: 72px; }
+  .free { text-align: center; color: var(--subtle); font-size: 12.5px; }
+  .feats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-top: 44px;
+  }
+  .feat {
+    background: var(--card); border-radius: 18px; padding: 18px;
+    font-size: 13.5px; color: var(--subtle);
+  }
+  .feat b { color: var(--text); display: block; margin-bottom: 4px; font-size: 14.5px; }
+  .shots { display: flex; gap: 16px; justify-content: center; margin-top: 44px; flex-wrap: wrap; }
+  .shots img {
+    width: min(280px, 44%); border-radius: 18px;
+    border: 1px solid rgba(139,123,255,0.25);
+  }
+  footer {
+    border-top: 1px solid rgba(139,147,172,0.15); margin-top: 64px;
+    padding: 28px 24px 36px; text-align: center; color: var(--subtle); font-size: 13px;
+  }
+  footer a { color: var(--cyan); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .sep { margin: 0 10px; opacity: 0.4; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="/">← Y CREATIVE</a>
+
+  <div class="hero">
+    <img class="icon" src="/quithaven-icon.png" alt="QuitHaven app icon — a broken vape with a green sprout growing from it">
+    <h1>QuitHaven</h1>
+    <div class="tag">Quit vaping. Build your haven.</div>
+    <p class="pitch">The quit-vaping app that fights like a game: smash cravings
+    with a 60-second SOS arcade, and turn every craving you beat into a
+    floating 3D world you build, stage by stage. No accounts, no cloud —
+    your quit stays on your phone.</p>
+  </div>
+
+  <div class="store">
+    <a href="https://play.google.com/store/apps/details?id=au.com.ycreative.quithaven">
+      <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+    </a>
+  </div>
+  <p class="free">Free · optional one-time Pro upgrade · Android</p>
+
+  <div class="feats">
+    <div class="feat"><b>🆘 Craving SOS</b>Guided breathing, a 12-game micro-arcade and no-nonsense Real Talk for the moment a craving hits.</div>
+    <div class="feat"><b>🏝️ Build your Haven</b>Every craving beaten funds your world — three lands that evolve from dead rock to legend.</div>
+    <div class="feat"><b>💰 Money back in your pocket</b>A live counter of what you're not spending, from day one.</div>
+    <div class="feat"><b>🫁 See your progress</b>A stylised recovery visual, milestones and streaks that make the invisible visible.</div>
+    <div class="feat"><b>🎯 Daily missions</b>Small wins every day: check in, beat cravings, bank XP.</div>
+    <div class="feat"><b>🔒 Private by design</b>No account, no cloud, nothing uploaded — everything stays on your device.</div>
+  </div>
+
+  <div class="shots">
+    <img src="shot1.png" alt="QuitHaven dashboard — vape-free streak timer, SOS button and lungs recovery">
+    <img src="shot2.png" alt="QuitHaven Haven world — a floating island that grows as your streak builds">
+  </div>
+</main>
+
+<footer>
+  <p>
+    <a href="/privacy.html">Privacy Policy</a>
+    <span class="sep">·</span>
+    <a href="mailto:support@ycreative.com.au">support@ycreative.com.au</a>
+  </p>
+  <p style="margin-top:8px">© 2026 Y CREATIVE PTY LTD · Australia<br>
+  <span style="font-size:11.5px">Google Play and the Google Play logo are trademarks of Google LLC.</span></p>
+</footer>
+</body>
+</html>
