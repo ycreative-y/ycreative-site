@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>QuitHaven</title>
+<link rel="canonical" href="https://www.ycreative.com.au/quithaven/">
+<!-- Short link for social bios where characters are scarce (TikTok allows 80).
+     Keeps any ?s=<source> so store links stay attributed. JS runs first; the
+     meta refresh is the no-JS fallback. -->
+<meta http-equiv="refresh" content="0; url=/quithaven/">
+<script>
+(function () {
+  var s = (new URLSearchParams(location.search).get('s') || '').toLowerCase();
+  location.replace('/quithaven/' + (/^[a-z0-9_]{1,20}$/.test(s) ? '?s=' + s : ''));
+})();
+</script>
+</head>
+<body>
+<p>Redirecting to <a href="/quithaven/">QuitHaven</a>…</p>
+</body>
+</html>
