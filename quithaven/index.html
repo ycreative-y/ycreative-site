@@ -28,8 +28,10 @@
   h1 { font-size: clamp(30px, 6vw, 44px); font-weight: 900; letter-spacing: 0.5px; margin: 18px 0 6px; }
   .tag { color: var(--cyan); font-weight: 700; }
   .pitch { color: var(--subtle); max-width: 54ch; margin: 14px auto 0; }
-  .store { text-align: center; margin: 26px 0 8px; }
-  .store img { height: 72px; }
+  .store { display: flex; justify-content: center; align-items: center;
+           gap: 10px; flex-wrap: wrap; margin: 26px 0 8px; }
+  .store .badge-play { height: 72px; }
+  .store .badge-ios { height: 50px; }
   .free { text-align: center; color: var(--subtle); font-size: 12.5px; }
   .feats {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -69,11 +71,14 @@
   </div>
 
   <div class="store">
-    <a href="https://play.google.com/store/apps/details?id=au.com.ycreative.quithaven">
-      <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+    <a href="https://play.google.com/store/apps/details?id=au.com.ycreative.quithaven&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dreferral%26utm_campaign%3Dquithaven_page">
+      <img class="badge-play" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+    </a>
+    <a href="https://apps.apple.com/app/id6813072665?ct=website">
+      <img class="badge-ios" alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83">
     </a>
   </div>
-  <p class="free">Free · optional one-time Pro upgrade · Android</p>
+  <p class="free">Free · optional one-time Pro upgrade · iPhone &amp; Android</p>
 
   <div class="feats">
     <div class="feat"><b>🆘 Craving SOS</b>Guided breathing, a 12-game micro-arcade and no-nonsense Real Talk for the moment a craving hits.</div>
@@ -97,7 +102,25 @@
     <a href="mailto:support@ycreative.com.au">support@ycreative.com.au</a>
   </p>
   <p style="margin-top:8px">© 2026 Y CREATIVE PTY LTD · Australia<br>
-  <span style="font-size:11.5px">Google Play and the Google Play logo are trademarks of Google LLC.</span></p>
+  <span style="font-size:11.5px">Google Play and the Google Play logo are trademarks of Google LLC.<br>
+  Apple and the Apple logo are trademarks of Apple Inc.</span></p>
 </footer>
+<script>
+// Carry the traffic source from a bio link (e.g. /quithaven/?s=tiktok) into
+// both store links, so Play's acquisition report and Apple's App Analytics
+// show which platform sent the install instead of a flat "website".
+(function () {
+  var s = (new URLSearchParams(location.search).get('s') || '').toLowerCase();
+  if (!/^[a-z0-9_]{1,20}$/.test(s)) return;
+  document.querySelectorAll('.store a').forEach(function (a) {
+    if (a.href.indexOf('play.google.com') > -1) {
+      a.href = 'https://play.google.com/store/apps/details?id=au.com.ycreative.quithaven'
+        + '&referrer=' + encodeURIComponent('utm_source=' + s + '&utm_medium=social&utm_campaign=bio');
+    } else if (a.href.indexOf('apps.apple.com') > -1) {
+      a.href = 'https://apps.apple.com/app/id6813072665?ct=' + encodeURIComponent(s + '_bio');
+    }
+  });
+})();
+</script>
 </body>
 </html>
